@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    padding-top: 60px;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #007acc;
+    padding: 0 15px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.open-btn {
+    background: transparent;
+    color: #000000;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.open-btn:hover {
+    background: #007acc;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    background-color: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #007acc;
+}
+
+.sidebar-header h2 {
+    font-size: 16px;
+    color: #007acc;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #000000;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #007acc;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li.active a {
+    background-color: #ffffff;
+    color: #007acc;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.news-card {
+    background-color: #ffffff;
+    border: 1px solid #007acc;
+    max-width: 500px;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.kutipan-container {
+    display: flex;
+    align-items: center;
+    background-color: #bbd3f1;
+    height: 45px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.label-kutipan {
+    background-color: #007acc;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.teks-berjalan {
+    flex-grow: 1;
+    color: #ffffff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.teks-berjalan marquee {
+    display: block;
+}
+
+.home {
+  border-bottom: 1px solid #007acc;
+  padding: 8px 10px;
+  color: #007acc;
+}
+
+.kepala {
+    background-color: #ffffff;
+    border: 1px solid #007acc;
+    max-width: 500px;
+    margin: 40px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  }
+
+.kepala-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+.kepala-judul {
+  padding: 8px;
+  }
+
+.kepala-teks1 {
+  padding: 8px;
+  color: #007acc;
+  }
+
+.kepala-teks2 {
+  padding: 8px;
+  }
+
+.kepala-teks3 {
+  padding: 8px;
+  }
+
+.kepala-teks4 {
+  padding: 8px;
+  }
+
+.cerita-box {
+    background-color: #ffffff;
+    color: #222222;
+    border: 1px solid #007acc;
+    max-width: 500px;
+    margin: 40px 10px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.cerita img {
+  width: 100%;
+  height: auto;
+  display: block;
+  }
+
+.cerita-singkat {
+    margin-bottom: 5px;
+  padding: 8px;
+}
+
+.cerita-penuh {
+    display: none; 
+    margin-top: 5px;
+  padding: 8px;
+}
+
+.read-more-btn {
+    display: block;
+    margin: 15px;
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.read-more-btn:hover {
+    background-color: #005999;
+}
+
+.daftar-jurusan {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.daftar-jurusan li {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+    color: #333333;
+}
+
+.selamat {
+  padding: 8px;
+  }
+
+.smk {
+  padding: 8px;
+  color: #007acc;
+  }
+
+/* Container Utama Statistik */
+.statistik-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Kotak Hitam */
+.stat-card {
+    background-color: #007acc; /* Warna latar gelap */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ukuran Ikon FontAwesome */
+.stat-icon i {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+/* Teks Angka dan Label */
+.stat-info {
+    text-align: right;
+}
+
+.stat-info h2 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.stat-info p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* Container Utama */
+.kontak-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.kontak-container h2 {
+    text-align: center;
+    color: #222222;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Layout Grid Kontak */
+.kontak-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* Card Kontak */
+.kontak-card {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kontak-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ukuran & Efek Ikon */
+.kontak-icon {
+    font-size: 28px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+    color: #007acc;
+}
+
+/* Warna Khas Masing-masing Platform */
+.wa .kontak-icon {
+    background-color: #ffffff; /* Warna Hijau WA */
+}
+
+.ig .kontak-icon {
+    background-color: #ffffff;
+}
+
+.fb .kontak-icon {
+    background-color: #ffffff; /* Warna Biru FB */
+}
+
+.email .kontak-icon {
+    background-color: #ffffff; /* Warna Merah Gmail */
+}
+
+/* Teks Informasi */
+.kontak-info h4 {
+    margin: 0;
+    font-size: 15px;
+    color: #111111;
+}
+
+.kontak-info p {
+    margin: 3px 0 0 0;
+    font-size: 13px;
+    color: #666666;
+}
+
+.simple-footer {
+    background-color: #007acc;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 40px;
+}
+
+.simple-footer p {
+    color: #ffffff;
+    font-size: 13px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container Utama Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+/* Track Tempat Gambar Berjejer */
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Item Gambar */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Indikator Titik (Dots) */
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ffffff;
+    width: 18px;
+    border-radius: 4px;
+}
+
