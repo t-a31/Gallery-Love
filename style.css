@@ -526,21 +526,29 @@ footer {
   .item-square-right { grid-column: 3 / span 4 !important; }
 }
 
-/* Tambahkan kode ini ke container penampung foto grid kamu */
-#photoContainer { /* <-- Ganti '#photoContainer' sesuai ID/Class container kamu */
+/* Container penampung slide */
+#photoContainer {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   overflow-x: auto !important;
   scroll-behavior: smooth;
-  gap: 15px !important;            /* Beri jarak antar foto/elemen grid agar tidak nempel */
-  padding: 0 10px !important;
+  width: 100% !important;
   
-  /* Sembunyikan scrollbar agar tampilan tetap bersih */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  /* Sembunyikan scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 #photoContainer::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
+}
+
+/* Mengatur agar SETIAP FOTO memenuhi 1 bingkai penuh */
+#photoContainer img {
+  width: 100% !important;      /* Tiap foto mengambil 100% lebar layar */
+  min-width: 100% !important;  /* Mencegah foto menciut/berjajar */
+  height: auto;                /* Menjaga rasio foto */
+  object-fit: cover;           /* Supaya foto rapi di dalam bingkai */
+  flex-shrink: 0 !important;   /* Mencegah foto dipaksa muat berbarengan */
 }
