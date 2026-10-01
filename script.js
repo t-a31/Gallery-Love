@@ -367,24 +367,17 @@ if (videoModal) {
   });
 }
 
-// --- AUTO SLIDE Samping Tanpa Ubah HTML ---
-document.addEventListener('DOMContentLoaded', () => {
-  // Ganti 'photoContainer' dengan ID container foto kamu
-  const container = document.getElementById('photoContainer'); 
-  if (!container) return;
+// Memanggil SEMUA elemen yang punya class js-slider
+const allSliders = document.querySelectorAll('.js-slider');
 
-  const speed = 3000; // Waktu geser tiap 3 detik
+allSliders.forEach((slider) => {
+  const images = slider.querySelectorAll('img');
+  let index = 0;
 
+  // Jalankan interval slider untuk tiap kontainer
   setInterval(() => {
-    // Cek apakah scroll sudah sampai paling ujung kanan
-    const maxScrollLeft = container.scrollWidth - container.clientWidth;
-    
-    if (container.scrollLeft >= maxScrollLeft - 5) {
-      // Jika sudah di ujung, balik lagi ke paling awal (kiri)
-      container.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      // Geser ke samping kanan sejauh lebar layar tampilan
-      container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
-    }
-  }, speed);
+    images[index].style.display = 'none'; // Sembunyikan gambar aktif
+    index = (index + 1) % images.length;   // Lanjut ke gambar berikutnya
+    images[index].style.display = 'block';  // Tampilkan gambar baru
+  }, 3000); // Berganti setiap 3 detik
 });
