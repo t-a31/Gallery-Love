@@ -533,6 +533,8 @@ footer {
   flex-wrap: nowrap !important;
   overflow-x: auto !important;
   scroll-behavior: smooth;
+  gap: 15px !important;            /* Beri jarak antar foto/elemen grid agar tidak nempel */
+  padding: 0 10px !important;
   
   /* Sembunyikan scrollbar agar tampilan tetap bersih */
   scrollbar-width: none; /* Firefox */
